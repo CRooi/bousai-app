@@ -1,0 +1,145 @@
+.marker_epicenter{
+    background-image:url('https://cdn.projectbs.cn/static/img/epicenter.png??');
+	background-size:cover;
+	width:50px;
+	height:50px;
+	cursor:pointer;
+    animation:fade 6000ms infinite;
+	z-index: 900;
+}
+
+[class^="marker_circle_shindo1"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/1.png????????');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}
+[class^="marker_circle_shindo2"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/2.png????');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 20;
+}
+[class^="marker_circle_shindo3"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/3.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 30;
+}
+[class^="marker_circle_shindo4"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/4.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 40;
+}
+[class^="marker_circle_shindo5-"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/5-.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 45;
+}
+[class^="marker_circle_shindo5+"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/5+.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 50;
+}
+[class^="marker_circle_shindo6-"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/6-.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 55;
+}
+[class^="marker_circle_shindo6+"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/6+.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 60;
+}
+[class^="marker_circle_shindo7"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/circleNew/7.png??');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 70;
+}
+.mapboxgl-popup{
+	max-width: none !important;
+	z-index: 1000;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.mapboxgl-popup-content {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+    height: auto;
+    width: auto;
+    font-size: 20px;
+    line-height: 20px;
+	background-color: rgba(255,255,255,0.5);
+}
+
+/* .mapboxgl-popup-anchor-bottom{
+	margin-top: -20px;
+}
+
+.mapboxgl-popup-anchor-top{
+	margin-top: 20px;
+}
+
+.mapboxgl-popup-anchor-left{
+	margin-left: 20px;
+}
+
+.mapboxgl-popup-anchor-right{
+	margin-left: -20px;
+}
+
+.mapboxgl-popup-anchor-top-left{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.mapboxgl-popup-anchor-bottom-left{
+	margin-top: -20px;
+	margin-left: 20px;
+}
+
+.mapboxgl-popup-anchor-top-right{
+	margin-top: 20px;
+	margin-left: -20px;
+}
+
+.mapboxgl-popup-anchor-bottom-right{
+	margin-top: -20px;
+	margin-left: -20px;
+} */
+
+.mapboxgl-popup-tip{
+    display: none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    30% { opacity: 0.01; }
+    to { opacity: 1.0; }
+}
