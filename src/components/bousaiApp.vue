@@ -22,6 +22,7 @@
 
 <script>
 import jmaPoints from '@/components/js/jmaPoints.json'
+import jmaAreas from '@/components/js/jmaAreas.json'
 /* ↑ From EarthQuicklyForWeb (ameuma773) */
 
 import axios from 'axios'
@@ -322,7 +323,7 @@ export default{
                     }else{
                         this.info.isTsunami = '津波情報発表中'
                     }
-                    let maxScale = json[1].earthquake.maxScale
+                    let maxScale = json[0].earthquake.maxScale
                     switch(maxScale){
                         case 10:
                             maxShindo = 1
@@ -383,36 +384,61 @@ export default{
                         this.info.isTsunami = '津波情報発表中'
                     }
                     let maxScale = json[0].earthquake.maxScale
-                    switch(maxScale){
-                        case 10:
-                            maxShindo = 1
-                            break
-                        case 20:
-                            maxShindo = 2
-                            break
-                        case 30:
-                            maxShindo = 3
-                            break
-                        case 40:
-                            maxShindo = 4
-                            break
-                        case 45:
-                            maxShindo = "5-"
-                            break
-                        case 50:
-                            maxShindo = "5+"
-                            break
-                        case 55:
-                            maxShindo = "6-"
-                            break
-                        case 60:
-                            maxShindo = "6+"
-                            break
-                        case 70:
-                            maxShindo = "7"
-                            break
+                    let shindo
+                    for(let i=0;i<json[0].points.length;i++){
+                        let addr = json[0].points[i].addr
+                        let scale = json[0].points[i].scale
+                        switch(scale){
+                            case 10:
+                                shindo[i] = 1
+                                break
+                            case 20:
+                                shindo[i] = 2
+                                break
+                            case 30:
+                                shindo[i] = 3
+                                break
+                            case 40:
+                                shindo[i] = 4
+                                break
+                            case 45:
+                                shindo[i] = "5-"
+                                break
+                            case 50:
+                                shindo[i] = "5+"
+                                break
+                            case 55:
+                                shindo[i] = "6-"
+                                break
+                            case 60:
+                                shindo[i] = "6+"
+                                break
+                            case 70:
+                                shindo[i] = "7"
+                                break
+                        }
+                        try{
+                            // addr = this.furigana(addr, this.getJm(addr))
+                            // console.log(addr);
+                            let lat = jmaStations[jmaAreas.indexOf(addr)]['lat']
+                            let lon = jmaStations[jmaAreas.indexOf(addr)]['lon']
+                            let addrJm = jmaStations[jmaAreas.indexOf(addr)]['furigana']
+                            addr = this.furigana(addr, addrJm)
+                            let marker_circle_shindo = document.createElement('div')
+                            marker_circle_shindo.className = `marker_circle_shindo${shindo[i]}_${i}`
+                            new mapboxgl.Marker(marker_circle_shindo).setLngLat([lon, lat]).addTo(map)
+                            marker_circle_shindo.onmouseover = () => {
+                                popup.setLngLat([lon, lat]).setHTML(`${addr} 震度${shindo[i]}`).addTo(map)
+                            }
+
+                            marker_circle_shindo.onmouseleave = () => {
+                                popup.setLngLat([lon, lat]).setHTML(`${addr} 震度${shindo[i]}`).addTo(map)
+                                popup.remove()
+                            }
+                        }catch{
+                            //console.log(`Error while generating marker: ${addr} 震度${shindo}`)
+                        }
                     }
-                    this.info.maxShindo = maxShindo
                 }else if(json[0].issue.type == 'Foreign'){
                     this.info.title = '遠地地震情報'
                     this.info.shows.maxShindo = false

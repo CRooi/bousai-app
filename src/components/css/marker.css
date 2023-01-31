@@ -80,6 +80,72 @@
 	cursor:pointer;
 	z-index: 70;
 }
+[class^="marker_square_shindo1"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/1.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}
+[class^="marker_square_shindo2"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/2.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo3"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/3.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo4"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/4.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo5-"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/5-.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo5+"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/5+.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo6-"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/6-.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo6+"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/6+.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}[class^="marker_square_shindo7"]{
+    background-image:url('https://cdn.projectbs.cn/static/img/shindo/squareNew/7.png');
+	background-size:cover;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	z-index: 10;
+}
+
 .mapboxgl-popup{
 	max-width: none !important;
 	z-index: 1000;
